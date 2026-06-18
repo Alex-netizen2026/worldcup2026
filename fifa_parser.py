@@ -1,9 +1,9 @@
 from urllib.request import Request, urlopen
 import json
 
-URL = "https://api.fifa.com/api/v3/calendar/matches?language=en&count=20&idCompetition=17"
+URL = "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17"
 
-print("FIFA API diagnostic v5")
+print("FIFA API diagnostic v6 — find 2026 season")
 print("URL:", URL)
 
 req = Request(
@@ -21,17 +21,31 @@ with urlopen(req, timeout=30) as response:
 
 results = data.get("Results", [])
 
-print("Results count:", len(results))
+seasons = {}
 
-if not results:
-    print("No results found")
-    raise SystemExit(0)
+def text_value(items):
+    if isinstance(items, list) and items:
+        return items[0].get("Description", "")
+    return ""
 
-match = results[0]
+for m in results:
+    season_id = m.get("IdSeason", "")
+    season_name = text_value(m.get("SeasonName", []))
+    date = m.get("Date", "")
+    seasons.setdefault(season_id, {"name": season_name, "first": date, "last": date, "count": 0})
+    seasons[season_id]["count"] += 1
+    if date < seasons[season_id]["first"]:
+        seasons[season_id]["first"] = date
+    if date > seasons[season_id]["last"]:
+        seasons[season_id]["last"] = date
 
-print("\nTop-level keys:")
-for key in match.keys():
-    print("-", key)
+print("Found seasons:", len(seasons))
 
-print("\nFirst match JSON preview:")
-print(json.dumps(match, indent=2, ensure_ascii=False)[:5000])
+for sid, info in sorted(seasons.items(), key=lambda x: x[1]["first"]):
+    print(
+        "IdSeason=", sid,
+        "|", info["name"],
+        "| matches=", info["count"],
+        "| first=", info["first"],
+        "| last=", info["last"]
+    )
