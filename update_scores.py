@@ -9,6 +9,10 @@ HISTORY_FILE = Path("worldcup2026_history.csv")
 LOG_FILE = Path("update_log.csv")
 
 
+def utc_now() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+
+
 def valid_score(score: str) -> bool:
     return bool(re.fullmatch(r"\d+-\d+", score.strip()))
 
@@ -40,7 +44,7 @@ def write_scores(path: Path, data: dict) -> None:
         for match_no in sorted(data, key=lambda x: int(x)):
             writer.writerow({
                 "MatchNo": match_no,
-                "Score": data[match_no]
+                "Score": data[match_no],
             })
 
 
@@ -57,7 +61,7 @@ def append_csv(path: Path, fieldnames: list, row: dict) -> None:
 
 
 def main() -> None:
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    now = utc_now()
 
     current_scores = read_scores(SCORES_FILE)
     manual_scores = read_scores(MANUAL_FILE)
