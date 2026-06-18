@@ -1,34 +1,58 @@
 from urllib.request import Request, urlopen
 import re
 
-FIFA_URL = "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures"
+BASE_URL = "https://www.fifa.com"
+JS_URL = "https://www.fifa.com/static/js/main.d9a5be55.js"
 
-print("FIFA parser diagnostic v2")
-print("URL:", FIFA_URL)
+print("FIFA parser diagnostic v3")
+print("JS URL:", JS_URL)
 
-req = Request(
-    FIFA_URL,
-    headers={
-        "User-Agent": "Mozilla/5.0"
-    }
-)
+req = Request(JS_URL, headers={"User-Agent": "Mozilla/5.0"})
 
 with urlopen(req, timeout=30) as response:
-    content = response.read().decode("utf-8", errors="ignore")
+    js = response.read().decode("utf-8", errors="ignore")
 
-print("Content length:", len(content))
-print("First 1000 chars:")
-print(content[:1000])
+print("JS length:", len(js))
 
-print("\nFound script src:")
-for m in re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', content):
-    print(m)
+keywords = [
+    "cxm-api",
+    "api.fifa.com",
+    "matches",
+    "fixtures",
+    "scores",
+    "competitions",
+    "tournament",
+    "fifaplusweb",
+]
 
-print("\nFound href:")
-for m in re.findall(r'href=["\']([^"\']+)["\']', content):
-    if "fifa" in m.lower() or "api" in m.lower() or "worldcup" in m.lower():
-        print(m)
+print("\nKeyword search:")
+for k in keywords:
+    print(k, "=", k in js)
 
-print("\nSearch tokens:")
-for token in ["__NEXT_DATA__", "api", "matches", "fixtures", "scores", "tournament"]:
-    print(token, "=", token in content)
+print("\nCandidate API fragments:")
+patterns = [
+    r"https?://[^\"']+",
+    r"/fifaplusweb/api[^\"']+",
+    r"/api/[^\"']+",
+    r"[A-Za-z0-9_/-]*(matches|fixtures|scores|competitions|tournament)[A-Za-z0-9_/?=&.-]*",
+]
+
+found = set()
+
+for pattern in patterns:
+    for m in re.findall(pattern, js):
+        if isinstance(m, tuple):
+            continue
+
+for m in re.findall(r"https?://[^\"'\\\s]+", js):
+    if any(x in m.lower() for x in ["api", "fifa", "match", "fixture", "score", "tournament"]):
+        found.add(m[:300])
+
+for m in re.findall(r"[/A-Za-z0-9_.-]*(?:matches|fixtures|scores|competitions|tournament)[/A-Za-z0-9_?=&:.,-]*", js, flags=re.I):
+    found.add(m[:300])
+
+for item in sorted(found):
+    print(item)
+
+print("\nFirst 1500 chars:")
+print(js[:1500])
