@@ -1,58 +1,62 @@
 from urllib.request import Request, urlopen
-import re
+from urllib.error import HTTPError, URLError
+import json
 
-BASE_URL = "https://www.fifa.com"
-JS_URL = "https://www.fifa.com/static/js/main.d9a5be55.js"
-
-print("FIFA parser diagnostic v3")
-print("JS URL:", JS_URL)
-
-req = Request(JS_URL, headers={"User-Agent": "Mozilla/5.0"})
-
-with urlopen(req, timeout=30) as response:
-    js = response.read().decode("utf-8", errors="ignore")
-
-print("JS length:", len(js))
-
-keywords = [
-    "cxm-api",
-    "api.fifa.com",
-    "matches",
-    "fixtures",
-    "scores",
-    "competitions",
-    "tournament",
-    "fifaplusweb",
+URLS = [
+    "https://api.fifa.com/api/v3/calendar/matches?language=en&count=100&idCompetition=17",
+    "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500",
+    "https://api.fifa.com/api/v3/competitions/17",
+    "https://api.fifa.com/api/v3/competitions/17/matches",
+    "https://fdh-api.fifa.com/v1/calendar/matches?language=en&count=500",
+    "https://fdh-api.fifa.com/v1/competitions/17/matches",
+    "https://cxm-api.fifa.com/fifaplusweb/api/sections/competitionSeasonSummary/",
+    "https://cxm-api.fifa.com/fifaplusweb/api/data/competitionSeasonSummaryData/",
 ]
 
-print("\nKeyword search:")
-for k in keywords:
-    print(k, "=", k in js)
+print("FIFA API diagnostic v4")
 
-print("\nCandidate API fragments:")
-patterns = [
-    r"https?://[^\"']+",
-    r"/fifaplusweb/api[^\"']+",
-    r"/api/[^\"']+",
-    r"[A-Za-z0-9_/-]*(matches|fixtures|scores|competitions|tournament)[A-Za-z0-9_/?=&.-]*",
-]
+for url in URLS:
+    print("\n---")
+    print("URL:", url)
 
-found = set()
+    try:
+        req = Request(
+            url,
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Accept": "application/json,text/plain,*/*",
+                "Origin": "https://www.fifa.com",
+                "Referer": "https://www.fifa.com/",
+            },
+        )
 
-for pattern in patterns:
-    for m in re.findall(pattern, js):
-        if isinstance(m, tuple):
-            continue
+        with urlopen(req, timeout=30) as response:
+            status = response.status
+            content_type = response.headers.get("Content-Type", "")
+            raw = response.read()
 
-for m in re.findall(r"https?://[^\"'\\\s]+", js):
-    if any(x in m.lower() for x in ["api", "fifa", "match", "fixture", "score", "tournament"]):
-        found.add(m[:300])
+        text = raw.decode("utf-8", errors="ignore")
 
-for m in re.findall(r"[/A-Za-z0-9_.-]*(?:matches|fixtures|scores|competitions|tournament)[/A-Za-z0-9_?=&:.,-]*", js, flags=re.I):
-    found.add(m[:300])
+        print("HTTP:", status)
+        print("Content-Type:", content_type)
+        print("Length:", len(text))
+        print("Preview:", text[:500].replace("\n", " "))
 
-for item in sorted(found):
-    print(item)
+        try:
+            data = json.loads(text)
+            print("JSON: yes")
+            if isinstance(data, dict):
+                print("Top keys:", list(data.keys())[:20])
+            elif isinstance(data, list):
+                print("List length:", len(data))
+        except Exception:
+            print("JSON: no")
 
-print("\nFirst 1500 chars:")
-print(js[:1500])
+    except HTTPError as e:
+        print("HTTP error:", e.code)
+
+    except URLError as e:
+        print("URL error:", e.reason)
+
+    except Exception as e:
+        print("Unexpected error:", str(e))
