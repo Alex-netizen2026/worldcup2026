@@ -1,27 +1,12 @@
-name: Update World Cup Scores
-
-on:
-  workflow_dispatch:
-
-  schedule:
-    - cron: "0 5 * * *"
-    - cron: "0 19 * * *"
-
-permissions:
-  contents: write
-
-jobs:
-  update-scores:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+...
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Run FIFA parser
+        run: |
+          python fifa_parser.py
 
       - name: Run update script
         run: |
