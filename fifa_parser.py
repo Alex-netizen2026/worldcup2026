@@ -34,7 +34,7 @@ def match_score(match):
 
 
 def main():
-    print("FIFA final parser started")
+    print("FIFA parser started - Excel chronological numbering")
 
     req = Request(
         FIFA_URL,
@@ -52,13 +52,16 @@ def main():
     matches = data.get("Results", [])
     print("Matches received:", len(matches))
 
+    # Главное исправление:
+    # FIFA MatchNumber не используем.
+    # Сортируем по дате и присваиваем MatchNo как в Excel Matches_DB.
+    matches = sorted(matches, key=lambda m: m.get("Date", ""))
+
     fixtures = []
     scores = []
 
-    for match in matches:
-        match_no = match.get("MatchNumber")
-        if match_no is None:
-            continue
+    for index, match in enumerate(matches, start=1):
+        match_no = index
 
         group_name = text_value(match.get("GroupName", []))
         group = group_name.replace("Group ", "").strip()
@@ -86,9 +89,6 @@ def main():
                 "MatchNo": match_no,
                 "Score": score,
             })
-
-    fixtures.sort(key=lambda x: int(x["MatchNo"]))
-    scores.sort(key=lambda x: int(x["MatchNo"]))
 
     with open(FIXTURES_FILE, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(
