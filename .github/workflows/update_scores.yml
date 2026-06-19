@@ -35,12 +35,16 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+
+          git add worldcup2026_fixtures.csv
+          git add manual_scores.csv
           git add worldcup2026_scores.csv
           git add worldcup2026_history.csv
           git add update_log.csv
+
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Update World Cup scores"
+            git commit -m "Update World Cup data"
             git push
           fi
