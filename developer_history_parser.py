@@ -91,6 +91,8 @@ def main():
             ):
                 print(f"{key}: {match.get(key)}")
                 if (home == "ARG" and away == "FRA") or (home == "FRA" and away == "ARG"):
+
+                    
     print("\n--- FULL JSON FOR ARGENTINA - FRANCE FINAL ---")
     print(json.dumps(match, indent=2, ensure_ascii=False))
 
