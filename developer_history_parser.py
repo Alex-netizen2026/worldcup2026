@@ -28,6 +28,45 @@ def is_target_match(home, away):
     return False
 
 
+def print_short_match_info(match, home, away):
+    print("\n========================================")
+    print("TARGET MATCH FOUND")
+    print("Date:", match.get("Date"))
+    print("FIFA MatchNumber:", match.get("MatchNumber"))
+    print("Teams:", home, "-", away)
+    print("StageName:", json.dumps(match.get("StageName"), ensure_ascii=False))
+    print("GroupName:", json.dumps(match.get("GroupName"), ensure_ascii=False))
+
+    print("\n--- MAIN SCORE FIELDS ---")
+    print("HomeTeamScore:", match.get("HomeTeamScore"))
+    print("AwayTeamScore:", match.get("AwayTeamScore"))
+
+    if isinstance(match.get("Home"), dict):
+        print("Home.Score:", match["Home"].get("Score"))
+    else:
+        print("Home.Score:", None)
+
+    if isinstance(match.get("Away"), dict):
+        print("Away.Score:", match["Away"].get("Score"))
+    else:
+        print("Away.Score:", None)
+
+    print("\n--- PENALTY / EXTRA / WINNER FIELDS ---")
+
+    for key in sorted(match.keys()):
+        low = key.lower()
+        if (
+            "penalty" in low
+            or "extra" in low
+            or "winner" in low
+            or "result" in low
+            or "period" in low
+            or "status" in low
+            or "aggregate" in low
+        ):
+            print(f"{key}: {match.get(key)}")
+
+
 def main():
     print("Developer history parser started")
     print("World Cup 2022 knockout diagnostic only")
@@ -62,40 +101,11 @@ def main():
             continue
 
         found += 1
+        print_short_match_info(match, home, away)
 
-        print("\n========================================")
-        print("TARGET MATCH FOUND")
-        print("Date:", match.get("Date"))
-        print("FIFA MatchNumber:", match.get("MatchNumber"))
-        print("Teams:", home, "-", away)
-        print("StageName:", json.dumps(match.get("StageName"), ensure_ascii=False))
-        print("GroupName:", json.dumps(match.get("GroupName"), ensure_ascii=False))
-
-        print("\n--- MAIN SCORE FIELDS ---")
-        print("HomeTeamScore:", match.get("HomeTeamScore"))
-        print("AwayTeamScore:", match.get("AwayTeamScore"))
-        print("Home.Score:", match.get("Home", {}).get("Score") if isinstance(match.get("Home"), dict) else None)
-        print("Away.Score:", match.get("Away", {}).get("Score") if isinstance(match.get("Away"), dict) else None)
-
-        print("\n--- PENALTY / EXTRA / WINNER FIELDS ---")
-        for key in sorted(match.keys()):
-            low = key.lower()
-            if (
-                "penalty" in low
-                or "extra" in low
-                or "winner" in low
-                or "result" in low
-                or "period" in low
-                or "status" in low
-                or "aggregate" in low
-            ):
-                print(f"{key}: {match.get(key)}")
-                
- if (home == "ARG" and away == "FRA") or (home == "FRA" and away == "ARG"):
-
-                    
-    print("\n--- FULL JSON FOR ARGENTINA - FRANCE FINAL ---")
-    print(json.dumps(match, indent=2, ensure_ascii=False))
+        if (home == "ARG" and away == "FRA") or (home == "FRA" and away == "ARG"):
+            print("\n--- FULL JSON FOR ARGENTINA - FRANCE FINAL ---")
+            print(json.dumps(match, indent=2, ensure_ascii=False))
 
     print("\n========================================")
     print("Target matches found:", found)
