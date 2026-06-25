@@ -71,10 +71,10 @@ MatchNo,Group,Home,Away,Date,City,Stadium
 70,K,COL,POR,2026-06-27T23:30:00Z,Miami,Miami Stadium
 71,J,ALG,AUT,2026-06-28T02:00:00Z,Kansas City,Kansas City Stadium
 72,J,JOR,ARG,2026-06-28T02:00:00Z,Dallas,Dallas Stadium
-73,,,CAN,2026-06-28T19:00:00Z,Los Angeles,Los Angeles Stadium
-74,,,,2026-06-29T17:00:00Z,Houston,Houston Stadium
+73,,RSA,CAN,2026-06-28T19:00:00Z,Los Angeles,Los Angeles Stadium
+74,,BRA,,2026-06-29T17:00:00Z,Houston,Houston Stadium
 75,,GER,,2026-06-29T20:30:00Z,Boston,Boston Stadium
-76,,,,2026-06-30T01:00:00Z,Monterrey,Monterrey Stadium
+76,,,MAR,2026-06-30T01:00:00Z,Monterrey,Monterrey Stadium
 77,,,,2026-06-30T17:00:00Z,Dallas,Dallas Stadium
 78,,,,2026-06-30T21:00:00Z,New Jersey,New York/New Jersey Stadium
 79,,MEX,,2026-07-01T01:00:00Z,Mexico City,Mexico City Stadium
