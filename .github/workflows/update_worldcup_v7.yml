@@ -1,0 +1,36 @@
+name: Update World Cup V7
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout v7
+        uses: actions/checkout@v4
+        with:
+          ref: v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run FIFA parser V7
+        run: python fifa_parser_v7.py
+
+      - name: Update scores V7
+        run: python update_scores_v7.py
+
+      - name: Commit V7 data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add manual_scores_v7.csv worldcup2026_fixtures_v7.csv worldcup2026_scores_v7.csv worldcup2026_history_v7.csv update_log_v7.csv
+          git commit -m "Update World Cup V7 data" || echo "No changes to commit"
+          git push origin v7
