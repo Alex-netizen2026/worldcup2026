@@ -1,0 +1,105 @@
+MatchNo,FIFA_ID,Group,Home,Away,UTCDateTime,Country,City,Stadium
+1,400021443,A,MEX,RSA,2026-06-11T19:00:00Z,,Mexico City,Mexico City Stadium
+2,400021441,A,KOR,CZE,2026-06-12T02:00:00Z,,Guadalajara,Guadalajara Stadium
+3,400021449,B,CAN,BIH,2026-06-12T19:00:00Z,,Toronto,Toronto Stadium
+4,400021458,D,USA,PAR,2026-06-13T01:00:00Z,,Los Angeles,Los Angeles Stadium
+5,400021447,B,QAT,SUI,2026-06-13T19:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
+6,400021456,C,BRA,MAR,2026-06-13T22:00:00Z,,New Jersey,New York/New Jersey Stadium
+7,400021453,C,HAI,SCO,2026-06-14T01:00:00Z,,Boston,Boston Stadium
+8,400021463,D,AUS,TUR,2026-06-14T04:00:00Z,,Vancouver,BC Place Vancouver
+9,400021464,E,GER,CUW,2026-06-14T17:00:00Z,,Houston,Houston Stadium
+10,400021470,F,NED,JPN,2026-06-14T20:00:00Z,,Dallas,Dallas Stadium
+11,400021467,E,CIV,ECU,2026-06-14T23:00:00Z,,Philadelphia,Philadelphia Stadium
+12,400021474,F,SWE,TUN,2026-06-15T02:00:00Z,,Monterrey,Monterrey Stadium
+13,400021482,H,ESP,CPV,2026-06-15T16:00:00Z,,Atlanta,Atlanta Stadium
+14,400021478,G,BEL,EGY,2026-06-15T19:00:00Z,,Seattle,Seattle Stadium
+15,400021486,H,KSA,URU,2026-06-15T22:00:00Z,,Miami,Miami Stadium
+16,400021476,G,IRN,NZL,2026-06-16T01:00:00Z,,Los Angeles,Los Angeles Stadium
+17,400021490,I,FRA,SEN,2026-06-16T19:00:00Z,,New Jersey,New York/New Jersey Stadium
+18,400021488,I,IRQ,NOR,2026-06-16T22:00:00Z,,Boston,Boston Stadium
+19,400021496,J,ARG,ALG,2026-06-17T01:00:00Z,,Kansas City,Kansas City Stadium
+20,400021498,J,AUT,JOR,2026-06-17T04:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
+21,400021502,K,POR,COD,2026-06-17T17:00:00Z,,Houston,Houston Stadium
+22,400021507,L,ENG,CRO,2026-06-17T20:00:00Z,,Dallas,Dallas Stadium
+23,400021510,L,GHA,PAN,2026-06-17T23:00:00Z,,Toronto,Toronto Stadium
+24,400021504,K,UZB,COL,2026-06-18T02:00:00Z,,Mexico City,Mexico City Stadium
+25,400021440,A,CZE,RSA,2026-06-18T16:00:00Z,,Atlanta,Atlanta Stadium
+26,400021446,B,SUI,BIH,2026-06-18T19:00:00Z,,Los Angeles,Los Angeles Stadium
+27,400021450,B,CAN,QAT,2026-06-18T22:00:00Z,,Vancouver,BC Place Vancouver
+28,400021442,A,MEX,KOR,2026-06-19T01:00:00Z,,Guadalajara,Guadalajara Stadium
+29,400021462,D,USA,AUS,2026-06-19T19:00:00Z,,Seattle,Seattle Stadium
+30,400021454,C,SCO,MAR,2026-06-19T22:00:00Z,,Boston,Boston Stadium
+31,400021457,C,BRA,HAI,2026-06-20T00:30:00Z,,Philadelphia,Philadelphia Stadium
+32,400021460,D,TUR,PAR,2026-06-20T03:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
+33,400021472,F,NED,SWE,2026-06-20T17:00:00Z,,Houston,Houston Stadium
+34,400021469,E,GER,CIV,2026-06-20T20:00:00Z,,Toronto,Toronto Stadium
+35,400021465,E,ECU,CUW,2026-06-21T00:00:00Z,,Kansas City,Kansas City Stadium
+36,400021475,F,TUN,JPN,2026-06-21T04:00:00Z,,Monterrey,Monterrey Stadium
+37,400021483,H,ESP,KSA,2026-06-21T16:00:00Z,,Atlanta,Atlanta Stadium
+38,400021477,G,BEL,IRN,2026-06-21T19:00:00Z,,Los Angeles,Los Angeles Stadium
+39,400021487,H,URU,CPV,2026-06-21T22:00:00Z,,Miami,Miami Stadium
+40,400021480,G,NZL,EGY,2026-06-22T01:00:00Z,,Vancouver,BC Place Vancouver
+41,400021494,J,ARG,AUT,2026-06-22T17:00:00Z,,Dallas,Dallas Stadium
+42,400021492,I,FRA,IRQ,2026-06-22T21:00:00Z,,Philadelphia,Philadelphia Stadium
+43,400021491,I,NOR,SEN,2026-06-23T00:00:00Z,,New Jersey,New York/New Jersey Stadium
+44,400021499,J,JOR,ALG,2026-06-23T03:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
+45,400021503,K,POR,UZB,2026-06-23T17:00:00Z,,Houston,Houston Stadium
+46,400021506,L,ENG,GHA,2026-06-23T20:00:00Z,,Boston,Boston Stadium
+47,400021511,L,PAN,CRO,2026-06-23T23:00:00Z,,Toronto,Toronto Stadium
+48,400021501,K,COL,COD,2026-06-24T02:00:00Z,,Guadalajara,Guadalajara Stadium
+49,400021448,B,BIH,QAT,2026-06-24T19:00:00Z,,Seattle,Seattle Stadium
+50,400021451,B,SUI,CAN,2026-06-24T19:00:00Z,,Vancouver,BC Place Vancouver
+51,400021452,C,MAR,HAI,2026-06-24T22:00:00Z,,Atlanta,Atlanta Stadium
+52,400021455,C,SCO,BRA,2026-06-24T22:00:00Z,,Miami,Miami Stadium
+53,400021445,A,RSA,KOR,2026-06-25T01:00:00Z,,Monterrey,Monterrey Stadium
+54,400021444,A,CZE,MEX,2026-06-25T01:00:00Z,,Mexico City,Mexico City Stadium
+55,400021468,E,CUW,CIV,2026-06-25T20:00:00Z,,Philadelphia,Philadelphia Stadium
+56,400021466,E,ECU,GER,2026-06-25T20:00:00Z,,New Jersey,New York/New Jersey Stadium
+57,400021473,F,TUN,NED,2026-06-25T23:00:00Z,,Kansas City,Kansas City Stadium
+58,400021471,F,JPN,SWE,2026-06-25T23:00:00Z,,Dallas,Dallas Stadium
+59,400021461,D,PAR,AUS,2026-06-26T02:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
+60,400021459,D,TUR,USA,2026-06-26T02:00:00Z,,Los Angeles,Los Angeles Stadium
+61,400021493,I,SEN,IRQ,2026-06-26T19:00:00Z,,Toronto,Toronto Stadium
+62,400021489,I,NOR,FRA,2026-06-26T19:00:00Z,,Boston,Boston Stadium
+63,400021484,H,URU,ESP,2026-06-27T00:00:00Z,,Guadalajara,Guadalajara Stadium
+64,400021485,H,CPV,KSA,2026-06-27T00:00:00Z,,Houston,Houston Stadium
+65,400021481,G,NZL,BEL,2026-06-27T03:00:00Z,,Vancouver,BC Place Vancouver
+66,400021479,G,EGY,IRN,2026-06-27T03:00:00Z,,Seattle,Seattle Stadium
+67,400021508,L,PAN,ENG,2026-06-27T21:00:00Z,,New Jersey,New York/New Jersey Stadium
+68,400021509,L,CRO,GHA,2026-06-27T21:00:00Z,,Philadelphia,Philadelphia Stadium
+69,400021500,K,COD,UZB,2026-06-27T23:30:00Z,,Atlanta,Atlanta Stadium
+70,400021505,K,COL,POR,2026-06-27T23:30:00Z,,Miami,Miami Stadium
+71,400021497,J,ALG,AUT,2026-06-28T02:00:00Z,,Kansas City,Kansas City Stadium
+72,400021495,J,JOR,ARG,2026-06-28T02:00:00Z,,Dallas,Dallas Stadium
+73,400021518,,RSA,CAN,2026-06-28T19:00:00Z,,Los Angeles,Los Angeles Stadium
+74,400021516,,BRA,JPN,2026-06-29T17:00:00Z,,Houston,Houston Stadium
+75,400021513,,GER,,2026-06-29T20:30:00Z,,Boston,Boston Stadium
+76,400021522,,NED,MAR,2026-06-30T01:00:00Z,,Monterrey,Monterrey Stadium
+77,400021514,,CIV,,2026-06-30T17:00:00Z,,Dallas,Dallas Stadium
+78,400021523,,,,2026-06-30T21:00:00Z,,New Jersey,New York/New Jersey Stadium
+79,400021520,,MEX,,2026-07-01T01:00:00Z,,Mexico City,Mexico City Stadium
+80,400021512,,,,2026-07-01T16:00:00Z,,Atlanta,Atlanta Stadium
+81,400021525,,,,2026-07-01T20:00:00Z,,Seattle,Seattle Stadium
+82,400021524,,USA,BIH,2026-07-02T00:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
+83,400021519,,,,2026-07-02T19:00:00Z,,Los Angeles,Los Angeles Stadium
+84,400021526,,,,2026-07-02T23:00:00Z,,Toronto,Toronto Stadium
+85,400021527,,SUI,,2026-07-03T03:00:00Z,,Vancouver,BC Place Vancouver
+86,400021515,,AUS,,2026-07-03T18:00:00Z,,Dallas,Dallas Stadium
+87,400021521,,ARG,,2026-07-03T22:00:00Z,,Miami,Miami Stadium
+88,400021517,,,,2026-07-04T01:30:00Z,,Kansas City,Kansas City Stadium
+89,400021530,,,,2026-07-04T17:00:00Z,,Houston,Houston Stadium
+90,400021533,,,,2026-07-04T21:00:00Z,,Philadelphia,Philadelphia Stadium
+91,400021532,,,,2026-07-05T20:00:00Z,,New Jersey,New York/New Jersey Stadium
+92,400021531,,,,2026-07-06T00:00:00Z,,Mexico City,Mexico City Stadium
+93,400021529,,,,2026-07-06T19:00:00Z,,Dallas,Dallas Stadium
+94,400021534,,,,2026-07-07T00:00:00Z,,Seattle,Seattle Stadium
+95,400021528,,,,2026-07-07T16:00:00Z,,Atlanta,Atlanta Stadium
+96,400021535,,,,2026-07-07T20:00:00Z,,Vancouver,BC Place Vancouver
+97,400021536,,,,2026-07-09T20:00:00Z,,Boston,Boston Stadium
+98,400021538,,,,2026-07-10T19:00:00Z,,Los Angeles,Los Angeles Stadium
+99,400021539,,,,2026-07-11T21:00:00Z,,Miami,Miami Stadium
+100,400021537,,,,2026-07-12T01:00:00Z,,Kansas City,Kansas City Stadium
+101,400021541,,,,2026-07-14T19:00:00Z,,Dallas,Dallas Stadium
+102,400021540,,,,2026-07-15T19:00:00Z,,Atlanta,Atlanta Stadium
+103,400021542,,,,2026-07-18T21:00:00Z,,Miami,Miami Stadium
+104,400021543,,,,2026-07-19T19:00:00Z,,New Jersey,New York/New Jersey Stadium
