@@ -73,19 +73,19 @@ MatchNo,Group,Home,Away,Date,City,Stadium
 72,J,JOR,ARG,2026-06-28T02:00:00Z,Dallas,Dallas Stadium
 73,,RSA,CAN,2026-06-28T19:00:00Z,Los Angeles,Los Angeles Stadium
 74,,BRA,JPN,2026-06-29T17:00:00Z,Houston,Houston Stadium
-75,,GER,,2026-06-29T20:30:00Z,Boston,Boston Stadium
+75,,GER,PAR,2026-06-29T20:30:00Z,Boston,Boston Stadium
 76,,NED,MAR,2026-06-30T01:00:00Z,Monterrey,Monterrey Stadium
 77,,CIV,NOR,2026-06-30T17:00:00Z,Dallas,Dallas Stadium
-78,,FRA,,2026-06-30T21:00:00Z,New Jersey,New York/New Jersey Stadium
+78,,FRA,SWE,2026-06-30T21:00:00Z,New Jersey,New York/New Jersey Stadium
 79,,MEX,,2026-07-01T01:00:00Z,Mexico City,Mexico City Stadium
 80,,,,2026-07-01T16:00:00Z,Atlanta,Atlanta Stadium
-81,,,,2026-07-01T20:00:00Z,Seattle,Seattle Stadium
+81,,BEL,,2026-07-01T20:00:00Z,Seattle,Seattle Stadium
 82,,USA,BIH,2026-07-02T00:00:00Z,San Francisco Bay Area,San Francisco Bay Area Stadium
-83,,,,2026-07-02T19:00:00Z,Los Angeles,Los Angeles Stadium
+83,,ESP,,2026-07-02T19:00:00Z,Los Angeles,Los Angeles Stadium
 84,,,,2026-07-02T23:00:00Z,Toronto,Toronto Stadium
 85,,SUI,,2026-07-03T03:00:00Z,Vancouver,BC Place Vancouver
-86,,AUS,,2026-07-03T18:00:00Z,Dallas,Dallas Stadium
-87,,ARG,,2026-07-03T22:00:00Z,Miami,Miami Stadium
+86,,AUS,EGY,2026-07-03T18:00:00Z,Dallas,Dallas Stadium
+87,,ARG,CPV,2026-07-03T22:00:00Z,Miami,Miami Stadium
 88,,,,2026-07-04T01:30:00Z,Kansas City,Kansas City Stadium
 89,,,,2026-07-04T17:00:00Z,Houston,Houston Stadium
 90,,,,2026-07-04T21:00:00Z,Philadelphia,Philadelphia Stadium
