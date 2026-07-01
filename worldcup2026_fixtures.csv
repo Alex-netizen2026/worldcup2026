@@ -90,9 +90,9 @@ MatchNo,Group,Home,Away,Date,City,Stadium
 89,,CAN,MAR,2026-07-04T17:00:00Z,Houston,Houston Stadium
 90,,PAR,FRA,2026-07-04T21:00:00Z,Philadelphia,Philadelphia Stadium
 91,,BRA,NOR,2026-07-05T20:00:00Z,New Jersey,New York/New Jersey Stadium
-92,,MEX,,2026-07-06T00:00:00Z,Mexico City,Mexico City Stadium
+92,,MEX,ENG,2026-07-06T00:00:00Z,Mexico City,Mexico City Stadium
 93,,,,2026-07-06T19:00:00Z,Dallas,Dallas Stadium
-94,,,,2026-07-07T00:00:00Z,Seattle,Seattle Stadium
+94,,,BEL,2026-07-07T00:00:00Z,Seattle,Seattle Stadium
 95,,,,2026-07-07T16:00:00Z,Atlanta,Atlanta Stadium
 96,,,,2026-07-07T20:00:00Z,Vancouver,BC Place Vancouver
 97,,,,2026-07-09T20:00:00Z,Boston,Boston Stadium
