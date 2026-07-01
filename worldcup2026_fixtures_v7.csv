@@ -77,7 +77,7 @@ MatchNo,FIFA_ID,Group,Home,Away,UTCDateTime,Country,City,Stadium
 76,400021522,,NED,MAR,2026-06-30T01:00:00Z,,Monterrey,Monterrey Stadium
 77,400021514,,CIV,NOR,2026-06-30T17:00:00Z,,Dallas,Dallas Stadium
 78,400021523,,FRA,SWE,2026-06-30T21:00:00Z,,New Jersey,New York/New Jersey Stadium
-79,400021520,,MEX,ECU,2026-07-01T01:00:00Z,,Mexico City,Mexico City Stadium
+79,400021520,,MEX,ECU,2026-07-01T02:00:00Z,,Mexico City,Mexico City Stadium
 80,400021512,,ENG,COD,2026-07-01T16:00:00Z,,Atlanta,Atlanta Stadium
 81,400021525,,BEL,SEN,2026-07-01T20:00:00Z,,Seattle,Seattle Stadium
 82,400021524,,USA,BIH,2026-07-02T00:00:00Z,,San Francisco Bay Area,San Francisco Bay Area Stadium
@@ -87,10 +87,10 @@ MatchNo,FIFA_ID,Group,Home,Away,UTCDateTime,Country,City,Stadium
 86,400021515,,AUS,EGY,2026-07-03T18:00:00Z,,Dallas,Dallas Stadium
 87,400021521,,ARG,CPV,2026-07-03T22:00:00Z,,Miami,Miami Stadium
 88,400021517,,COL,GHA,2026-07-04T01:30:00Z,,Kansas City,Kansas City Stadium
-89,400021530,,,,2026-07-04T17:00:00Z,,Houston,Houston Stadium
-90,400021533,,,,2026-07-04T21:00:00Z,,Philadelphia,Philadelphia Stadium
-91,400021532,,,,2026-07-05T20:00:00Z,,New Jersey,New York/New Jersey Stadium
-92,400021531,,,,2026-07-06T00:00:00Z,,Mexico City,Mexico City Stadium
+89,400021530,,CAN,MAR,2026-07-04T17:00:00Z,,Houston,Houston Stadium
+90,400021533,,PAR,FRA,2026-07-04T21:00:00Z,,Philadelphia,Philadelphia Stadium
+91,400021532,,BRA,NOR,2026-07-05T20:00:00Z,,New Jersey,New York/New Jersey Stadium
+92,400021531,,MEX,,2026-07-06T00:00:00Z,,Mexico City,Mexico City Stadium
 93,400021529,,,,2026-07-06T19:00:00Z,,Dallas,Dallas Stadium
 94,400021534,,,,2026-07-07T00:00:00Z,,Seattle,Seattle Stadium
 95,400021528,,,,2026-07-07T16:00:00Z,,Atlanta,Atlanta Stadium
