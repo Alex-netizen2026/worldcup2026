@@ -90,14 +90,14 @@ MatchNo,FIFA_ID,Group,Home,Away,UTCDateTime,Country,City,Stadium
 89,400021530,,CAN,MAR,2026-07-04T17:00:00Z,,Houston,Houston Stadium
 90,400021533,,PAR,FRA,2026-07-04T21:00:00Z,,Philadelphia,Philadelphia Stadium
 91,400021532,,BRA,NOR,2026-07-05T20:00:00Z,,New Jersey,New York/New Jersey Stadium
-92,400021531,,MEX,ENG,2026-07-06T00:00:00Z,,Mexico City,Mexico City Stadium
+92,400021531,,MEX,ENG,2026-07-06T01:00:00Z,,Mexico City,Mexico City Stadium
 93,400021529,,POR,ESP,2026-07-06T19:00:00Z,,Dallas,Dallas Stadium
 94,400021534,,USA,BEL,2026-07-07T00:00:00Z,,Seattle,Seattle Stadium
-95,400021528,,,,2026-07-07T16:00:00Z,,Atlanta,Atlanta Stadium
-96,400021535,,,,2026-07-07T20:00:00Z,,Vancouver,BC Place Vancouver
-97,400021536,,,,2026-07-09T20:00:00Z,,Boston,Boston Stadium
+95,400021528,,ARG,EGY,2026-07-07T16:00:00Z,,Atlanta,Atlanta Stadium
+96,400021535,,SUI,COL,2026-07-07T20:00:00Z,,Vancouver,BC Place Vancouver
+97,400021536,,FRA,MAR,2026-07-09T20:00:00Z,,Boston,Boston Stadium
 98,400021538,,,,2026-07-10T19:00:00Z,,Los Angeles,Los Angeles Stadium
-99,400021539,,,,2026-07-11T21:00:00Z,,Miami,Miami Stadium
+99,400021539,,NOR,ENG,2026-07-11T21:00:00Z,,Miami,Miami Stadium
 100,400021537,,,,2026-07-12T01:00:00Z,,Kansas City,Kansas City Stadium
 101,400021541,,,,2026-07-14T19:00:00Z,,Dallas,Dallas Stadium
 102,400021540,,,,2026-07-15T19:00:00Z,,Atlanta,Atlanta Stadium
