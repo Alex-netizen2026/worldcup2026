@@ -3,6 +3,12 @@ name: Update World Cup V7
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "30 3 * * *"
+      timezone: "Asia/Tashkent"
+    - cron: "30 9 * * *"
+      timezone: "Asia/Tashkent"
+
 permissions:
   contents: write
 
@@ -11,6 +17,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Stop after 20 July
+        shell: bash
+        run: |
+          TODAY=$(TZ="Asia/Tashkent" date +%m-%d)
+          if [[ "$TODAY" > "07-20" ]]; then
+            echo "World Cup period finished. Stop scheduled parser."
+            exit 0
+          fi
+
       - name: Checkout v7
         uses: actions/checkout@v4
         with:
@@ -21,16 +36,79 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run FIFA parser V7
-        run: python fifa_parser_v7.py
+      - name: Install requirements
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            pip install requests
+          fi
 
-      - name: Update scores V7
-        run: python update_scores_v7.py
+      - name: Run FIFA parser V7 and write log
+        shell: bash
+        run: |
+          LOG_FILE="update_log_v7.csv"
 
-      - name: Commit V7 data
+          log_event () {
+            TS=$(TZ="Asia/Tashkent" date +"%Y-%m-%d %H:%M:%S local")
+            echo "$TS,GitHubAction,$1,$2,$3" >> "$LOG_FILE"
+          }
+
+          log_event "START" "Parser_V7" "GitHub parser started"
+
+          python fifa_parser_v7.py > parser_v7_output.log 2>&1
+          PARSER_RC=$?
+          cat parser_v7_output.log
+
+          if [ $PARSER_RC -eq 0 ]; then
+            log_event "OK" "fifa_parser_v7.py" "Parser finished successfully"
+          else
+            log_event "FAILED" "fifa_parser_v7.py" "Parser failed"
+          fi
+
+          python update_scores_v7.py > update_scores_v7_output.log 2>&1
+          SCORES_RC=$?
+          cat update_scores_v7_output.log
+
+          if [ $SCORES_RC -eq 0 ]; then
+            log_event "OK" "update_scores_v7.py" "Scores update finished successfully"
+          else
+            log_event "FAILED" "update_scores_v7.py" "Scores update failed"
+          fi
+
+          CHANGED=$(git status --porcelain manual_scores_v7.csv worldcup2026_fixtures_v7.csv worldcup2026_scores_v7.csv worldcup2026_history_v7.csv update_log_v7.csv | wc -l)
+
+          if [ "$CHANGED" -gt 0 ]; then
+            log_event "UPDATED" "CSV" "$CHANGED files changed"
+          else
+            log_event "NO_CHANGES" "CSV" "No new FIFA data"
+          fi
+
+          if [ $PARSER_RC -ne 0 ] || [ $SCORES_RC -ne 0 ]; then
+            echo "OVERALL_STATUS=FAILED" >> $GITHUB_ENV
+          else
+            echo "OVERALL_STATUS=OK" >> $GITHUB_ENV
+          fi
+
+      - name: Commit V7 data and logs
+        shell: bash
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add manual_scores_v7.csv worldcup2026_fixtures_v7.csv worldcup2026_scores_v7.csv worldcup2026_history_v7.csv update_log_v7.csv
-          git commit -m "Update World Cup V7 data" || echo "No changes to commit"
+
+          git add manual_scores_v7.csv worldcup2026_fixtures_v7.csv worldcup2026_scores_v7.csv worldcup2026_history_v7.csv update_log_v7.csv parser_v7_output.log update_scores_v7_output.log
+
+          git commit -m "Update World Cup V7 data and parser log" || echo "No changes to commit"
           git push origin v7
+
+      - name: Final status
+        shell: bash
+        run: |
+          if [ "$OVERALL_STATUS" = "FAILED" ]; then
+            echo "Parser or scores updater failed. See update_log_v7.csv and *_output.log."
+            exit 1
+          fi
+
+          echo "World Cup V7 update completed successfully."
